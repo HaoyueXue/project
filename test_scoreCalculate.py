@@ -8,11 +8,13 @@ def create_score_calculator():
     return app
 
 def test_calculate_level():
-    assert scoreCalculator.calculate_level(95, 100) == 'A'
-    assert scoreCalculator.calculate_level(85, 100) == 'B'
-    assert scoreCalculator.calculate_level(75, 100) == 'C'
-    assert scoreCalculator.calculate_level(65, 100) == 'D'
-    assert scoreCalculator.calculate_level(55, 100) == 'F'
+    calculator = create_score_calculator()
+
+    assert calculator.calculate_level(95, 100) == 'A'
+    assert calculator.calculate_level(85, 100) == 'B'
+    assert calculator.calculate_level(75, 100) == 'C'
+    assert calculator.calculate_level(65, 100) == 'D'
+    assert calculator.calculate_level(55, 100) == 'F'
 
 def test_calculate_example1():
     # Sample Output 1
@@ -31,12 +33,10 @@ def test_calculate_example2():
     # Sample Output 2
     calculator = create_score_calculator()
 
-    # Adding students manually
     calculator.student_names.append(tk.StringVar(value="1"))
     calculator.student_names.append(tk.StringVar(value="2"))
     calculator.student_names.append(tk.StringVar(value="3"))
 
-    # Adding scores manually
     calculator.score_entries.append(tk.StringVar(value="55"))
     calculator.score_entries.append(tk.StringVar(value="40"))
     calculator.score_entries.append(tk.StringVar(value="70"))
@@ -57,12 +57,10 @@ def test_calculate_example3():
     # Sample Output 3
     calculator = create_score_calculator()
 
-    # Adding students manually
     calculator.student_names.append(tk.StringVar(value="1"))
     calculator.student_names.append(tk.StringVar(value="2"))
     calculator.student_names.append(tk.StringVar(value="3"))
 
-    # Adding scores manually
     calculator.score_entries.append(tk.StringVar(value="40"))
     calculator.score_entries.append(tk.StringVar(value="55"))
     calculator.score_entries.append(tk.StringVar(value="70"))
@@ -83,11 +81,9 @@ def test_calculate_example4():
     # Sample Output 4
     calculator = create_score_calculator()
 
-    # Adding students manually
     calculator.student_names.append(tk.StringVar(value="1"))
     calculator.student_names.append(tk.StringVar(value="2"))
 
-    # Adding scores manually
     calculator.score_entries.append(tk.StringVar(value="7"))
     calculator.score_entries.append(tk.StringVar(value="100"))
 

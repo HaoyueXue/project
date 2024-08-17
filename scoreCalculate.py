@@ -20,7 +20,7 @@ class scoreCalculator:
         """
         self.root = root
         self.root.title("Grade Calculator")
-        self.root.geometry("600x400")
+        self.root.geometry("500x400")
 
         self.student_names = []
         self.score_entries = []
@@ -32,6 +32,10 @@ class scoreCalculator:
         """
         Creates the GUI windows, including buttons, labels, and entry fields.
         """
+        # Title
+        title_label = tk.Label(self.root, text="Grades Calculator", font=("Helvetica", 16))
+        title_label.pack(side="top", pady=10)
+
         # Frame for student entries
         self.student_frame = tk.Frame(self.root)
         self.student_frame.pack(fill="both", expand=True, padx=10, pady=10)
@@ -46,7 +50,7 @@ class scoreCalculator:
         self.result_label = tk.Label(self.root, textvariable=self.result_text, justify="left")
         self.result_label.pack(side="top", pady=10)
 
-    # calculate the level
+    # Calculate the level
     def calculate_level(self, score: int, best_score: int) -> str:
         """
         Calculate the grade level based on the score relative to the best score.
@@ -128,7 +132,6 @@ class scoreCalculator:
             self.score_entries.append(score_entry)
         else:
             messagebox.showwarning("Limit Reached", "You can only add up to 10 students.")
-
 
 if __name__ == "__main__":
     root = tk.Tk()
